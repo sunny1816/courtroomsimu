@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     nim_api_key: str = ""
     nim_model: str = "meta/llama-3.1-8b-instruct"
     nim_base_url: str = "https://integrate.api.nvidia.com/v1"
-    use_mock_llm: bool = Field(default=False, alias="LEXA_USE_MOCK_LLM")
+    use_mock_llm: bool = Field(default=True, alias="LEXA_USE_MOCK_LLM")
 
     supabase_url: str = ""
     supabase_anon_key: str = ""
