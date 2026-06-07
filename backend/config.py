@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     supabase_anon_key: str = ""
     supabase_service_role_key: str = ""
     local_store: Path = Field(default=Path("data/local_store.json"), alias="LEXA_LOCAL_STORE")
-    cors_origins: str = Field(default="", alias="LEXA_CORS_ORIGINS")
+    cors_origins: str = Field(default="*", alias="LEXA_CORS_ORIGINS")
 
     corpus_dir: Path = Path("data/corpus")
     index_dir: Path = Path("models/faiss_index")
