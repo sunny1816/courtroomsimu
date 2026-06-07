@@ -17,3 +17,4 @@ data/local_store.json
 data/uploads/
 models/faiss_index/*.faiss
 models/faiss_index/*.pkl
+manual-check.png
