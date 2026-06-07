@@ -1,3 +1,13 @@
+---
+title: Lexa Backend
+emoji: ⚖️
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 8000
+pinned: false
+---
+
 # LEXA
 
 LEXA is a capstone-ready courtroom intelligence demo. A user submits a legal case document, and six AI agents analyze evidence, argue prosecution and defense positions, detect contradictions, produce a verdict, and show the full reasoning trace.
