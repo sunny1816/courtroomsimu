@@ -1,0 +1,15 @@
+fastapi==0.111.0
+uvicorn==0.30.1
+python-multipart==0.0.9
+pydantic==2.7.4
+pydantic-settings==2.2.1
+langgraph==0.1.14
+langchain-core==0.2.22
+openai==1.30.5
+pymupdf==1.24.5
+faiss-cpu==1.8.0
+sentence-transformers==3.0.0
+supabase==2.5.0
+python-dotenv==1.0.1
+pytest==8.2.2
+httpx==0.27.0
