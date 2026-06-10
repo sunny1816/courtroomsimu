@@ -487,6 +487,38 @@
       "raw_text": "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod. The victim later died in hospital. The defense says the witness was standing far away and could not clearly identify the attacker. Police recovered a rod, but the forensic report is inconclusive.",
       "status": "completed",
       "created_at": "2026-06-07T14:58:36.626080+00:00"
+    },
+    {
+      "id": "dafc909b-30d1-4f21-a68f-ea20c19dfdf1",
+      "title": "Test Case",
+      "file_path": null,
+      "raw_text": "The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim. The victim later died.",
+      "status": "completed",
+      "created_at": "2026-06-07T16:57:03.634771+00:00"
+    },
+    {
+      "id": "a43234fc-50bb-48fa-af6f-0ecca42bac53",
+      "title": "Post-fix Test",
+      "file_path": null,
+      "raw_text": "The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim. The victim later died.",
+      "status": "completed",
+      "created_at": "2026-06-07T16:58:20.351474+00:00"
+    },
+    {
+      "id": "23cae9c3-f535-403f-8bff-6db9debbd0cb",
+      "title": "Sample Case: State v. Rohan",
+      "file_path": null,
+      "raw_text": "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod. The victim later died in hospital. The defense says the witness was standing far away and could not clearly identify the attacker. Police recovered a rod, but the forensic report is inconclusive.",
+      "status": "completed",
+      "created_at": "2026-06-10T14:32:48.724635+00:00"
+    },
+    {
+      "id": "1e721b21-acc1-48d2-b17b-f98e9d95e1cb",
+      "title": "Sample Case: State v. Rohan",
+      "file_path": null,
+      "raw_text": "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod. The victim later died in hospital. The defense says the witness was standing far away and could not clearly identify the attacker. Police recovered a rod, but the forensic report is inconclusive.",
+      "status": "completed",
+      "created_at": "2026-06-10T14:34:13.185714+00:00"
     }
   ],
   "verdicts": [
@@ -1599,6 +1631,508 @@
         }
       ],
       "created_at": "2026-06-07T14:58:36.951484+00:00"
+    },
+    {
+      "id": "2a2c7977-0c66-4e57-b238-3791a59dc9c2",
+      "case_id": "dafc909b-30d1-4f21-a68f-ea20c19dfdf1",
+      "verdict": "Guilty",
+      "confidence": 0.72,
+      "evidence_summary": "The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim. The victim later died.",
+      "prosecution_args": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim.",
+      "defense_args": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts.",
+      "contradictions": [
+        {
+          "statement_a": "Prosecution relies on the complaint",
+          "statement_b": "Defense disputes proof beyond doubt",
+          "conflict": "Evidentiary sufficiency"
+        }
+      ],
+      "retrieved_laws": [
+        {
+          "section": "BNSS",
+          "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+          "relevance": 3
+        },
+        {
+          "section": "BSA",
+          "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+          "relevance": 3
+        },
+        {
+          "section": "BNS",
+          "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+          "relevance": 2
+        }
+      ],
+      "judge_reasoning": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support.",
+      "jury_vote": {
+        "verdict": "Guilty",
+        "confidence": 0.72,
+        "votes": {
+          "guilty": 4,
+          "not_guilty": 1,
+          "abstain": 0
+        }
+      },
+      "appeal_decision": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding.",
+      "agent_trace": [
+        {
+          "agent": "Evidence",
+          "output": {
+            "facts": [
+              "The complaint states Rohan argued with the victim at 8:30 PM.",
+              "A witness says Rohan struck the victim.",
+              "The victim later died."
+            ],
+            "people": [
+              "Rohan"
+            ],
+            "dates": [
+              "8:30 PM"
+            ],
+            "events": [
+              "Incident described in uploaded case",
+              "Evidence and defenses separated for review"
+            ]
+          }
+        },
+        {
+          "agent": "LegalResearch",
+          "output": [
+            {
+              "section": "BNSS",
+              "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+              "relevance": 3
+            },
+            {
+              "section": "BSA",
+              "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+              "relevance": 3
+            },
+            {
+              "section": "BNS",
+              "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+              "relevance": 2
+            }
+          ]
+        },
+        {
+          "agent": "Prosecutor",
+          "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim."
+        },
+        {
+          "agent": "Defense",
+          "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+        },
+        {
+          "agent": "ContradictionDetector",
+          "output": [
+            {
+              "statement_a": "Prosecution relies on the complaint",
+              "statement_b": "Defense disputes proof beyond doubt",
+              "conflict": "Evidentiary sufficiency"
+            }
+          ]
+        },
+        {
+          "agent": "Judge",
+          "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+        },
+        {
+          "agent": "Jury",
+          "output": {
+            "verdict": "Guilty",
+            "confidence": 0.72,
+            "votes": {
+              "guilty": 4,
+              "not_guilty": 1,
+              "abstain": 0
+            }
+          }
+        },
+        {
+          "agent": "AppealCourt",
+          "output": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding."
+        }
+      ],
+      "created_at": "2026-06-07T16:57:04.220735+00:00"
+    },
+    {
+      "id": "b50ddda0-b397-4a7c-9c82-acacb2979989",
+      "case_id": "a43234fc-50bb-48fa-af6f-0ecca42bac53",
+      "verdict": "Guilty",
+      "confidence": 0.72,
+      "evidence_summary": "The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim. The victim later died.",
+      "prosecution_args": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim.",
+      "defense_args": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts.",
+      "contradictions": [
+        {
+          "statement_a": "Prosecution relies on the complaint",
+          "statement_b": "Defense disputes proof beyond doubt",
+          "conflict": "Evidentiary sufficiency"
+        }
+      ],
+      "retrieved_laws": [
+        {
+          "section": "BNSS",
+          "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+          "relevance": 3
+        },
+        {
+          "section": "BSA",
+          "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+          "relevance": 3
+        },
+        {
+          "section": "BNS",
+          "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+          "relevance": 2
+        }
+      ],
+      "judge_reasoning": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support.",
+      "jury_vote": {
+        "verdict": "Guilty",
+        "confidence": 0.72,
+        "votes": {
+          "guilty": 4,
+          "not_guilty": 1,
+          "abstain": 0
+        }
+      },
+      "appeal_decision": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding.",
+      "agent_trace": [
+        {
+          "agent": "Evidence",
+          "output": {
+            "facts": [
+              "The complaint states Rohan argued with the victim at 8:30 PM.",
+              "A witness says Rohan struck the victim.",
+              "The victim later died."
+            ],
+            "people": [
+              "Rohan"
+            ],
+            "dates": [
+              "8:30 PM"
+            ],
+            "events": [
+              "Incident described in uploaded case",
+              "Evidence and defenses separated for review"
+            ]
+          }
+        },
+        {
+          "agent": "LegalResearch",
+          "output": [
+            {
+              "section": "BNSS",
+              "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+              "relevance": 3
+            },
+            {
+              "section": "BSA",
+              "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+              "relevance": 3
+            },
+            {
+              "section": "BNS",
+              "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+              "relevance": 2
+            }
+          ]
+        },
+        {
+          "agent": "Prosecutor",
+          "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim."
+        },
+        {
+          "agent": "Defense",
+          "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+        },
+        {
+          "agent": "ContradictionDetector",
+          "output": [
+            {
+              "statement_a": "Prosecution relies on the complaint",
+              "statement_b": "Defense disputes proof beyond doubt",
+              "conflict": "Evidentiary sufficiency"
+            }
+          ]
+        },
+        {
+          "agent": "Judge",
+          "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+        },
+        {
+          "agent": "Jury",
+          "output": {
+            "verdict": "Guilty",
+            "confidence": 0.72,
+            "votes": {
+              "guilty": 4,
+              "not_guilty": 1,
+              "abstain": 0
+            }
+          }
+        },
+        {
+          "agent": "AppealCourt",
+          "output": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding."
+        }
+      ],
+      "created_at": "2026-06-07T16:58:20.986884+00:00"
+    },
+    {
+      "id": "15b489c8-ed66-4deb-babe-08919bb0564e",
+      "case_id": "23cae9c3-f535-403f-8bff-6db9debbd0cb",
+      "verdict": "Guilty",
+      "confidence": 0.63,
+      "evidence_summary": "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod. The victim later died in hospital.",
+      "prosecution_args": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod.",
+      "defense_args": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts.",
+      "contradictions": [
+        {
+          "statement_a": "Prosecution relies on the complaint",
+          "statement_b": "Defense disputes proof beyond doubt",
+          "conflict": "Evidentiary sufficiency"
+        }
+      ],
+      "retrieved_laws": [
+        {
+          "section": "BNSS",
+          "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+          "relevance": 5
+        },
+        {
+          "section": "BSA",
+          "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+          "relevance": 3
+        },
+        {
+          "section": "BNS",
+          "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+          "relevance": 2
+        }
+      ],
+      "judge_reasoning": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support.",
+      "jury_vote": {
+        "verdict": "Guilty",
+        "confidence": 0.63,
+        "votes": {
+          "guilty": 3,
+          "not_guilty": 1,
+          "abstain": 1
+        }
+      },
+      "appeal_decision": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding.",
+      "agent_trace": [
+        {
+          "agent": "Evidence",
+          "output": {
+            "facts": [
+              "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+              "A witness says Rohan struck the victim with a metal rod.",
+              "The victim later died in hospital.",
+              "The defense says the witness was standing far away and could not clearly identify the attacker."
+            ],
+            "people": [
+              "Rohan"
+            ],
+            "dates": [
+              "8:30 PM"
+            ],
+            "events": [
+              "Incident described in uploaded case",
+              "Evidence and defenses separated for review"
+            ]
+          }
+        },
+        {
+          "agent": "LegalResearch",
+          "output": [
+            {
+              "section": "BNSS",
+              "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+              "relevance": 5
+            },
+            {
+              "section": "BSA",
+              "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+              "relevance": 3
+            },
+            {
+              "section": "BNS",
+              "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+              "relevance": 2
+            }
+          ]
+        },
+        {
+          "agent": "Prosecutor",
+          "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+        },
+        {
+          "agent": "Defense",
+          "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+        },
+        {
+          "agent": "ContradictionDetector",
+          "output": [
+            {
+              "statement_a": "Prosecution relies on the complaint",
+              "statement_b": "Defense disputes proof beyond doubt",
+              "conflict": "Evidentiary sufficiency"
+            }
+          ]
+        },
+        {
+          "agent": "Judge",
+          "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+        },
+        {
+          "agent": "Jury",
+          "output": {
+            "verdict": "Guilty",
+            "confidence": 0.63,
+            "votes": {
+              "guilty": 3,
+              "not_guilty": 1,
+              "abstain": 1
+            }
+          }
+        },
+        {
+          "agent": "AppealCourt",
+          "output": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding."
+        }
+      ],
+      "created_at": "2026-06-10T14:32:48.969650+00:00"
+    },
+    {
+      "id": "6dc8c6af-cd87-4283-8835-cf0c8ba77ae3",
+      "case_id": "1e721b21-acc1-48d2-b17b-f98e9d95e1cb",
+      "verdict": "Guilty",
+      "confidence": 0.63,
+      "evidence_summary": "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod. The victim later died in hospital.",
+      "prosecution_args": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod.",
+      "defense_args": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts.",
+      "contradictions": [
+        {
+          "statement_a": "Prosecution relies on the complaint",
+          "statement_b": "Defense disputes proof beyond doubt",
+          "conflict": "Evidentiary sufficiency"
+        }
+      ],
+      "retrieved_laws": [
+        {
+          "section": "BNSS",
+          "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+          "relevance": 5
+        },
+        {
+          "section": "BSA",
+          "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+          "relevance": 3
+        },
+        {
+          "section": "BNS",
+          "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+          "relevance": 2
+        }
+      ],
+      "judge_reasoning": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support.",
+      "jury_vote": {
+        "verdict": "Guilty",
+        "confidence": 0.63,
+        "votes": {
+          "guilty": 3,
+          "not_guilty": 1,
+          "abstain": 1
+        }
+      },
+      "appeal_decision": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding.",
+      "agent_trace": [
+        {
+          "agent": "Evidence",
+          "output": {
+            "facts": [
+              "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+              "A witness says Rohan struck the victim with a metal rod.",
+              "The victim later died in hospital.",
+              "The defense says the witness was standing far away and could not clearly identify the attacker."
+            ],
+            "people": [
+              "Rohan"
+            ],
+            "dates": [
+              "8:30 PM"
+            ],
+            "events": [
+              "Incident described in uploaded case",
+              "Evidence and defenses separated for review"
+            ]
+          }
+        },
+        {
+          "agent": "LegalResearch",
+          "output": [
+            {
+              "section": "BNSS",
+              "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+              "relevance": 5
+            },
+            {
+              "section": "BSA",
+              "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+              "relevance": 3
+            },
+            {
+              "section": "BNS",
+              "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+              "relevance": 2
+            }
+          ]
+        },
+        {
+          "agent": "Prosecutor",
+          "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+        },
+        {
+          "agent": "Defense",
+          "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+        },
+        {
+          "agent": "ContradictionDetector",
+          "output": [
+            {
+              "statement_a": "Prosecution relies on the complaint",
+              "statement_b": "Defense disputes proof beyond doubt",
+              "conflict": "Evidentiary sufficiency"
+            }
+          ]
+        },
+        {
+          "agent": "Judge",
+          "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+        },
+        {
+          "agent": "Jury",
+          "output": {
+            "verdict": "Guilty",
+            "confidence": 0.63,
+            "votes": {
+              "guilty": 3,
+              "not_guilty": 1,
+              "abstain": 1
+            }
+          }
+        },
+        {
+          "agent": "AppealCourt",
+          "output": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding."
+        }
+      ],
+      "created_at": "2026-06-10T14:34:13.469368+00:00"
     }
   ],
   "agent_logs": [
@@ -6969,6 +7503,2260 @@
         ]
       },
       "created_at": "2026-06-07T14:58:36.917216+00:00"
+    },
+    {
+      "id": "991b794c-a680-4a70-b7ec-933f35ddd420",
+      "case_id": "dafc909b-30d1-4f21-a68f-ea20c19dfdf1",
+      "agent_name": "Evidence",
+      "output": {
+        "evidence": {
+          "facts": [
+            "The complaint states Rohan argued with the victim at 8:30 PM.",
+            "A witness says Rohan struck the victim.",
+            "The victim later died."
+          ],
+          "people": [
+            "Rohan"
+          ],
+          "dates": [
+            "8:30 PM"
+          ],
+          "events": [
+            "Incident described in uploaded case",
+            "Evidence and defenses separated for review"
+          ]
+        },
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:57:03.735232+00:00"
+    },
+    {
+      "id": "a7d2e843-b6da-4f98-81dc-0300dd9c0e18",
+      "case_id": "dafc909b-30d1-4f21-a68f-ea20c19dfdf1",
+      "agent_name": "LegalResearch",
+      "output": {
+        "retrieved_laws": [
+          {
+            "section": "BNSS",
+            "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+            "relevance": 3
+          },
+          {
+            "section": "BSA",
+            "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+            "relevance": 3
+          },
+          {
+            "section": "BNS",
+            "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+            "relevance": 2
+          }
+        ],
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 3
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:57:03.800416+00:00"
+    },
+    {
+      "id": "45162b62-dbc9-4b0c-9dc6-9a017f95b786",
+      "case_id": "dafc909b-30d1-4f21-a68f-ea20c19dfdf1",
+      "agent_name": "Prosecutor",
+      "output": {
+        "prosecution": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 3
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim."
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:57:03.855569+00:00"
+    },
+    {
+      "id": "3d535e97-3c40-4987-bed2-36601628301d",
+      "case_id": "dafc909b-30d1-4f21-a68f-ea20c19dfdf1",
+      "agent_name": "Defense",
+      "output": {
+        "defense": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 3
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:57:03.913010+00:00"
+    },
+    {
+      "id": "50b9aebc-51d2-4c89-ae4e-a8299cc6d2a5",
+      "case_id": "dafc909b-30d1-4f21-a68f-ea20c19dfdf1",
+      "agent_name": "ContradictionDetector",
+      "output": {
+        "contradictions": [
+          {
+            "statement_a": "Prosecution relies on the complaint",
+            "statement_b": "Defense disputes proof beyond doubt",
+            "conflict": "Evidentiary sufficiency"
+          }
+        ],
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 3
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:57:03.976540+00:00"
+    },
+    {
+      "id": "97dafe36-aeed-4f0c-88fe-f4ae7283f591",
+      "case_id": "dafc909b-30d1-4f21-a68f-ea20c19dfdf1",
+      "agent_name": "Judge",
+      "output": {
+        "judge_reasoning": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 3
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:57:04.035721+00:00"
+    },
+    {
+      "id": "6db33d3a-15b7-4082-a5d0-91959001c41e",
+      "case_id": "dafc909b-30d1-4f21-a68f-ea20c19dfdf1",
+      "agent_name": "Jury",
+      "output": {
+        "jury_vote": {
+          "verdict": "Guilty",
+          "confidence": 0.72,
+          "votes": {
+            "guilty": 4,
+            "not_guilty": 1,
+            "abstain": 0
+          }
+        },
+        "final_verdict": "Guilty",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 3
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          },
+          {
+            "agent": "Jury",
+            "output": {
+              "verdict": "Guilty",
+              "confidence": 0.72,
+              "votes": {
+                "guilty": 4,
+                "not_guilty": 1,
+                "abstain": 0
+              }
+            }
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:57:04.104591+00:00"
+    },
+    {
+      "id": "590597db-b02c-4f93-86df-40eec0892101",
+      "case_id": "dafc909b-30d1-4f21-a68f-ea20c19dfdf1",
+      "agent_name": "AppealCourt",
+      "output": {
+        "appeal_decision": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 3
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          },
+          {
+            "agent": "Jury",
+            "output": {
+              "verdict": "Guilty",
+              "confidence": 0.72,
+              "votes": {
+                "guilty": 4,
+                "not_guilty": 1,
+                "abstain": 0
+              }
+            }
+          },
+          {
+            "agent": "AppealCourt",
+            "output": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding."
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:57:04.161411+00:00"
+    },
+    {
+      "id": "0ea5f5a7-1ee5-42ac-98db-3e044f8f1d8d",
+      "case_id": "a43234fc-50bb-48fa-af6f-0ecca42bac53",
+      "agent_name": "Evidence",
+      "output": {
+        "evidence": {
+          "facts": [
+            "The complaint states Rohan argued with the victim at 8:30 PM.",
+            "A witness says Rohan struck the victim.",
+            "The victim later died."
+          ],
+          "people": [
+            "Rohan"
+          ],
+          "dates": [
+            "8:30 PM"
+          ],
+          "events": [
+            "Incident described in uploaded case",
+            "Evidence and defenses separated for review"
+          ]
+        },
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:58:20.453791+00:00"
+    },
+    {
+      "id": "87baa811-bc36-400b-bf2e-a5d6bc2c2dec",
+      "case_id": "a43234fc-50bb-48fa-af6f-0ecca42bac53",
+      "agent_name": "LegalResearch",
+      "output": {
+        "retrieved_laws": [
+          {
+            "section": "BNSS",
+            "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+            "relevance": 3
+          },
+          {
+            "section": "BSA",
+            "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+            "relevance": 3
+          },
+          {
+            "section": "BNS",
+            "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+            "relevance": 2
+          }
+        ],
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 3
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:58:20.520127+00:00"
+    },
+    {
+      "id": "812471fa-ec81-46b7-a6db-a6d3f846f6b2",
+      "case_id": "a43234fc-50bb-48fa-af6f-0ecca42bac53",
+      "agent_name": "Prosecutor",
+      "output": {
+        "prosecution": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 3
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim."
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:58:20.581316+00:00"
+    },
+    {
+      "id": "4257550e-0179-4a11-b115-ec250cfc199c",
+      "case_id": "a43234fc-50bb-48fa-af6f-0ecca42bac53",
+      "agent_name": "Defense",
+      "output": {
+        "defense": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 3
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:58:20.648898+00:00"
+    },
+    {
+      "id": "1c7b5efe-2092-4971-a000-2782271c6791",
+      "case_id": "a43234fc-50bb-48fa-af6f-0ecca42bac53",
+      "agent_name": "ContradictionDetector",
+      "output": {
+        "contradictions": [
+          {
+            "statement_a": "Prosecution relies on the complaint",
+            "statement_b": "Defense disputes proof beyond doubt",
+            "conflict": "Evidentiary sufficiency"
+          }
+        ],
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 3
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:58:20.714795+00:00"
+    },
+    {
+      "id": "0fc3efd9-50dd-44ce-a24c-3a273e5c7ea9",
+      "case_id": "a43234fc-50bb-48fa-af6f-0ecca42bac53",
+      "agent_name": "Judge",
+      "output": {
+        "judge_reasoning": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 3
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:58:20.778989+00:00"
+    },
+    {
+      "id": "b666170a-4cac-46e2-a5b6-2afcd5d0f7f6",
+      "case_id": "a43234fc-50bb-48fa-af6f-0ecca42bac53",
+      "agent_name": "Jury",
+      "output": {
+        "jury_vote": {
+          "verdict": "Guilty",
+          "confidence": 0.72,
+          "votes": {
+            "guilty": 4,
+            "not_guilty": 1,
+            "abstain": 0
+          }
+        },
+        "final_verdict": "Guilty",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 3
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          },
+          {
+            "agent": "Jury",
+            "output": {
+              "verdict": "Guilty",
+              "confidence": 0.72,
+              "votes": {
+                "guilty": 4,
+                "not_guilty": 1,
+                "abstain": 0
+              }
+            }
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:58:20.849383+00:00"
+    },
+    {
+      "id": "f6ef8f85-ede4-4f49-8424-14dc03c7823f",
+      "case_id": "a43234fc-50bb-48fa-af6f-0ecca42bac53",
+      "agent_name": "AppealCourt",
+      "output": {
+        "appeal_decision": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states Rohan argued with the victim at 8:30 PM.",
+                "A witness says Rohan struck the victim.",
+                "The victim later died."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 3
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states Rohan argued with the victim at 8:30 PM. A witness says Rohan struck the victim."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          },
+          {
+            "agent": "Jury",
+            "output": {
+              "verdict": "Guilty",
+              "confidence": 0.72,
+              "votes": {
+                "guilty": 4,
+                "not_guilty": 1,
+                "abstain": 0
+              }
+            }
+          },
+          {
+            "agent": "AppealCourt",
+            "output": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding."
+          }
+        ]
+      },
+      "created_at": "2026-06-07T16:58:20.917093+00:00"
+    },
+    {
+      "id": "3e95e2d7-bbe6-49ff-bd5a-78fbaa0a8329",
+      "case_id": "23cae9c3-f535-403f-8bff-6db9debbd0cb",
+      "agent_name": "Evidence",
+      "output": {
+        "evidence": {
+          "facts": [
+            "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+            "A witness says Rohan struck the victim with a metal rod.",
+            "The victim later died in hospital.",
+            "The defense says the witness was standing far away and could not clearly identify the attacker."
+          ],
+          "people": [
+            "Rohan"
+          ],
+          "dates": [
+            "8:30 PM"
+          ],
+          "events": [
+            "Incident described in uploaded case",
+            "Evidence and defenses separated for review"
+          ]
+        },
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:32:48.787194+00:00"
+    },
+    {
+      "id": "b38e9588-94b7-4c3b-a820-87c5e6ea53ff",
+      "case_id": "23cae9c3-f535-403f-8bff-6db9debbd0cb",
+      "agent_name": "LegalResearch",
+      "output": {
+        "retrieved_laws": [
+          {
+            "section": "BNSS",
+            "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+            "relevance": 5
+          },
+          {
+            "section": "BSA",
+            "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+            "relevance": 3
+          },
+          {
+            "section": "BNS",
+            "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+            "relevance": 2
+          }
+        ],
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 5
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:32:48.806820+00:00"
+    },
+    {
+      "id": "a7330f9e-7c50-4f32-9bfd-843cdcb606f6",
+      "case_id": "23cae9c3-f535-403f-8bff-6db9debbd0cb",
+      "agent_name": "Prosecutor",
+      "output": {
+        "prosecution": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 5
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:32:48.824887+00:00"
+    },
+    {
+      "id": "41707664-510a-4737-8af0-7d507d1f6270",
+      "case_id": "23cae9c3-f535-403f-8bff-6db9debbd0cb",
+      "agent_name": "Defense",
+      "output": {
+        "defense": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 5
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:32:48.846891+00:00"
+    },
+    {
+      "id": "edf954e2-c5ef-4a1f-9626-0be96460d23e",
+      "case_id": "23cae9c3-f535-403f-8bff-6db9debbd0cb",
+      "agent_name": "ContradictionDetector",
+      "output": {
+        "contradictions": [
+          {
+            "statement_a": "Prosecution relies on the complaint",
+            "statement_b": "Defense disputes proof beyond doubt",
+            "conflict": "Evidentiary sufficiency"
+          }
+        ],
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 5
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:32:48.865093+00:00"
+    },
+    {
+      "id": "bdb0391d-a58f-4d95-aa0d-62adbda6b19f",
+      "case_id": "23cae9c3-f535-403f-8bff-6db9debbd0cb",
+      "agent_name": "Judge",
+      "output": {
+        "judge_reasoning": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 5
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:32:48.882452+00:00"
+    },
+    {
+      "id": "5aa823f8-193e-48ae-8a43-07d4c3730fab",
+      "case_id": "23cae9c3-f535-403f-8bff-6db9debbd0cb",
+      "agent_name": "Jury",
+      "output": {
+        "jury_vote": {
+          "verdict": "Guilty",
+          "confidence": 0.63,
+          "votes": {
+            "guilty": 3,
+            "not_guilty": 1,
+            "abstain": 1
+          }
+        },
+        "final_verdict": "Guilty",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 5
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          },
+          {
+            "agent": "Jury",
+            "output": {
+              "verdict": "Guilty",
+              "confidence": 0.63,
+              "votes": {
+                "guilty": 3,
+                "not_guilty": 1,
+                "abstain": 1
+              }
+            }
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:32:48.914672+00:00"
+    },
+    {
+      "id": "e831c268-a781-43b4-a316-d40d6c907f86",
+      "case_id": "23cae9c3-f535-403f-8bff-6db9debbd0cb",
+      "agent_name": "AppealCourt",
+      "output": {
+        "appeal_decision": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 5
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          },
+          {
+            "agent": "Jury",
+            "output": {
+              "verdict": "Guilty",
+              "confidence": 0.63,
+              "votes": {
+                "guilty": 3,
+                "not_guilty": 1,
+                "abstain": 1
+              }
+            }
+          },
+          {
+            "agent": "AppealCourt",
+            "output": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding."
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:32:48.940302+00:00"
+    },
+    {
+      "id": "584328f5-b820-4331-acde-a4ac6c9aa34d",
+      "case_id": "1e721b21-acc1-48d2-b17b-f98e9d95e1cb",
+      "agent_name": "Evidence",
+      "output": {
+        "evidence": {
+          "facts": [
+            "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+            "A witness says Rohan struck the victim with a metal rod.",
+            "The victim later died in hospital.",
+            "The defense says the witness was standing far away and could not clearly identify the attacker."
+          ],
+          "people": [
+            "Rohan"
+          ],
+          "dates": [
+            "8:30 PM"
+          ],
+          "events": [
+            "Incident described in uploaded case",
+            "Evidence and defenses separated for review"
+          ]
+        },
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:34:13.266922+00:00"
+    },
+    {
+      "id": "6775c2ef-16d5-4b31-86db-8305fc51ac3d",
+      "case_id": "1e721b21-acc1-48d2-b17b-f98e9d95e1cb",
+      "agent_name": "LegalResearch",
+      "output": {
+        "retrieved_laws": [
+          {
+            "section": "BNSS",
+            "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+            "relevance": 5
+          },
+          {
+            "section": "BSA",
+            "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+            "relevance": 3
+          },
+          {
+            "section": "BNS",
+            "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+            "relevance": 2
+          }
+        ],
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 5
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:34:13.288009+00:00"
+    },
+    {
+      "id": "75d7c566-217b-42ea-9dde-352000e5554c",
+      "case_id": "1e721b21-acc1-48d2-b17b-f98e9d95e1cb",
+      "agent_name": "Prosecutor",
+      "output": {
+        "prosecution": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 5
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:34:13.306198+00:00"
+    },
+    {
+      "id": "13815aa8-92c5-44b3-9798-1d739f80cfc6",
+      "case_id": "1e721b21-acc1-48d2-b17b-f98e9d95e1cb",
+      "agent_name": "Defense",
+      "output": {
+        "defense": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 5
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:34:13.334150+00:00"
+    },
+    {
+      "id": "5d86dc94-39e1-4df8-b4a7-55309d3cf75b",
+      "case_id": "1e721b21-acc1-48d2-b17b-f98e9d95e1cb",
+      "agent_name": "ContradictionDetector",
+      "output": {
+        "contradictions": [
+          {
+            "statement_a": "Prosecution relies on the complaint",
+            "statement_b": "Defense disputes proof beyond doubt",
+            "conflict": "Evidentiary sufficiency"
+          }
+        ],
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 5
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:34:13.353994+00:00"
+    },
+    {
+      "id": "d0133f8d-a288-4af0-ab7c-4067e616d3d8",
+      "case_id": "1e721b21-acc1-48d2-b17b-f98e9d95e1cb",
+      "agent_name": "Judge",
+      "output": {
+        "judge_reasoning": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 5
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:34:13.381338+00:00"
+    },
+    {
+      "id": "3f15cf96-ec44-4e01-a98f-b8f23b42ccb3",
+      "case_id": "1e721b21-acc1-48d2-b17b-f98e9d95e1cb",
+      "agent_name": "Jury",
+      "output": {
+        "jury_vote": {
+          "verdict": "Guilty",
+          "confidence": 0.63,
+          "votes": {
+            "guilty": 3,
+            "not_guilty": 1,
+            "abstain": 1
+          }
+        },
+        "final_verdict": "Guilty",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 5
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          },
+          {
+            "agent": "Jury",
+            "output": {
+              "verdict": "Guilty",
+              "confidence": 0.63,
+              "votes": {
+                "guilty": 3,
+                "not_guilty": 1,
+                "abstain": 1
+              }
+            }
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:34:13.410140+00:00"
+    },
+    {
+      "id": "83c32e42-8b4f-4fe8-9ce9-0e3c6816efe9",
+      "case_id": "1e721b21-acc1-48d2-b17b-f98e9d95e1cb",
+      "agent_name": "AppealCourt",
+      "output": {
+        "appeal_decision": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defenses separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": [
+              {
+                "section": "BNSS",
+                "text": "BNSS Section 193 - Police report. After investigation, the officer forwards a report to the Magistrate with facts and evidence collected.",
+                "relevance": 5
+              },
+              {
+                "section": "BSA",
+                "text": "BSA Section 4 - Relevancy of facts. Evidence is relevant when facts are connected with the facts in issue under the Act.",
+                "relevance": 3
+              },
+              {
+                "section": "BNS",
+                "text": "BNS Section 101 - Murder. Whoever causes death with intention or knowledge described by law may be punished for murder.",
+                "relevance": 2
+              }
+            ]
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defense presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defense disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defense doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          },
+          {
+            "agent": "Jury",
+            "output": {
+              "verdict": "Guilty",
+              "confidence": 0.63,
+              "votes": {
+                "guilty": 3,
+                "not_guilty": 1,
+                "abstain": 1
+              }
+            }
+          },
+          {
+            "agent": "AppealCourt",
+            "output": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding."
+          }
+        ]
+      },
+      "created_at": "2026-06-10T14:34:13.438426+00:00"
     }
   ]
 }

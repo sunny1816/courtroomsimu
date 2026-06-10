@@ -9,6 +9,14 @@ class Settings(BaseSettings):
     nim_base_url: str = "https://integrate.api.nvidia.com/v1"
     use_mock_llm: bool = Field(default=True, alias="LEXA_USE_MOCK_LLM")
 
+    openrouter_api_key: str = ""
+    openrouter_model: str = "meta-llama/llama-3.3-70b-instruct:free"
+    openrouter_base_url: str = "https://openrouter.ai/api/v1"
+
+    groq_api_key: str = ""
+    groq_model: str = "llama-3.3-70b-versatile"
+    groq_base_url: str = "https://api.groq.com/openai/v1"
+
     supabase_url: str = ""
     supabase_anon_key: str = ""
     supabase_service_role_key: str = ""

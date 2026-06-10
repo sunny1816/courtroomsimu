@@ -1,10 +1,25 @@
 import json
 import time
 import re
+import contextvars
 from ast import literal_eval
 from openai import OpenAI
 
 from config import settings
+
+case_id_var = contextvars.ContextVar("case_id", default="")
+warning_logged_var = contextvars.ContextVar("warning_logged", default=False)
+
+
+def _trigger_fallback_warning():
+    case_id = case_id_var.get()
+    if case_id and not warning_logged_var.get():
+        try:
+            from services import supabase_client as db
+            db.log_agent(case_id, "System", {"warning": "NIM unavailable. Using fallback model."})
+            warning_logged_var.set(True)
+        except Exception as e:
+            print(f"Error logging fallback warning: {e}")
 
 
 def _extract_evidence(user_content: str) -> dict:
@@ -70,13 +85,14 @@ def _mock_response(system_prompt: str, user_content: str) -> str:
 def call_agent(system_prompt: str, user_content: str) -> str:
     if settings.use_mock_llm:
         return _mock_response(system_prompt, user_content)
-    if not settings.nim_api_key:
-        raise RuntimeError("NIM_API_KEY is required when LEXA_USE_MOCK_LLM=false.")
 
-    client = OpenAI(base_url=settings.nim_base_url, api_key=settings.nim_api_key, timeout=20.0)
-    last_error: Exception | None = None
-    for attempt in range(3):
+    import os
+    errors = []
+
+    # 1. NVIDIA NIM
+    if settings.nim_api_key:
         try:
+            client = OpenAI(base_url=settings.nim_base_url, api_key=settings.nim_api_key, timeout=20.0)
             response = client.chat.completions.create(
                 model=settings.nim_model,
                 messages=[
@@ -88,6 +104,53 @@ def call_agent(system_prompt: str, user_content: str) -> str:
             )
             return response.choices[0].message.content or ""
         except Exception as exc:
-            last_error = exc
-            time.sleep(1.5 * (attempt + 1))
-    raise RuntimeError(f"NIM request failed after 3 attempts: {last_error}")
+            errors.append(f"NVIDIA NIM failed: {exc}")
+    else:
+        errors.append("NVIDIA NIM skipped: nim_api_key not set")
+
+    # If NIM failed or was skipped, trigger the fallback warning log
+    _trigger_fallback_warning()
+
+    # 2. OpenRouter
+    or_key = settings.openrouter_api_key or os.environ.get("OPENROUTER_API_KEY", "")
+    if or_key:
+        try:
+            client = OpenAI(base_url=settings.openrouter_base_url, api_key=or_key, timeout=20.0)
+            response = client.chat.completions.create(
+                model=settings.openrouter_model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_content},
+                ],
+                temperature=0.3,
+                max_tokens=1024,
+            )
+            return response.choices[0].message.content or ""
+        except Exception as exc:
+            errors.append(f"OpenRouter failed: {exc}")
+    else:
+        errors.append("OpenRouter skipped: openrouter_api_key not set")
+
+    # 3. Groq
+    groq_key = settings.groq_api_key or os.environ.get("GROQ_API_KEY", "")
+    if groq_key:
+        try:
+            client = OpenAI(base_url=settings.groq_base_url, api_key=groq_key, timeout=20.0)
+            response = client.chat.completions.create(
+                model=settings.groq_model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_content},
+                ],
+                temperature=0.3,
+                max_tokens=1024,
+            )
+            return response.choices[0].message.content or ""
+        except Exception as exc:
+            errors.append(f"Groq failed: {exc}")
+    else:
+        errors.append("Groq skipped: groq_api_key not set")
+
+    # 4. Mock Model
+    print(f"Fallback warning: All LLM providers failed. Errors: {errors}")
+    return _mock_response(system_prompt, user_content)
