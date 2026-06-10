@@ -57,7 +57,7 @@ export function CaseHistory({ cases, activeCaseId, onSelect }: Props) {
                   >
                     {statusText}
                   </span>
-                  <span className={isActive ? 'text-white/40 dark:text-black/40' : 'text-gray-400'}>•</span>
+                  <span className={isActive ? 'text-white/40 dark:text-black/40' : 'text-gray-400'}>/</span>
                   <span className={`inline-flex items-center gap-1 ${isActive ? 'text-white/60 dark:text-black/60' : 'text-gray-400 dark:text-gray-500'}`}>
                     <Calendar className="w-3 h-3" />
                     {new Date(item.created_at).toLocaleDateString()}

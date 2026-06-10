@@ -277,7 +277,7 @@ export function Home() {
   ]
 
   return (
-    <div className="min-h-screen text-[#172033] dark:text-[#edf4f1] font-sans selection:bg-[#176B87]/20 selection:text-[#176B87] dark:selection:bg-[#2DD4BF]/20 dark:selection:text-[#2DD4BF]">
+    <div className="relative min-h-screen overflow-hidden text-[#172033] dark:text-[#edf4f1] font-sans selection:bg-[#176B87]/20 selection:text-[#176B87] dark:selection:bg-[#2DD4BF]/20 dark:selection:text-[#2DD4BF]">
       
       {/* Background Radial Glow Effects */}
       <div className="absolute top-[20%] left-[-10%] w-[50vw] h-[50vw] halo-glow-orb opacity-40" />
@@ -584,7 +584,7 @@ export function Home() {
           </div>
 
           <p className="text-[11px] text-gray-400 dark:text-gray-500 font-sans">
-            © {new Date().getFullYear()} LEXA Inc. All rights reserved. Indian jurisdiction simulator.
+            Copyright {new Date().getFullYear()} LEXA Inc. All rights reserved. Indian jurisdiction simulator.
           </p>
         </div>
       </footer>
