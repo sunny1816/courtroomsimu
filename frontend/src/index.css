@@ -20,17 +20,19 @@
 
 :root {
   color: #172033;
-  background: #F5F5F5;
+  background: #f7fafc;
   font-family: 'Plus Jakarta Sans', 'TT Norms Pro', 'Inter', ui-sans-serif, system-ui, sans-serif;
   scroll-behavior: smooth;
   
   --primary-color: #176B87;
   --primary-hover: #115066;
   --accent-color: #45A987;
-  --card-bg: rgba(255, 255, 255, 0.75);
-  --card-border: rgba(0, 0, 0, 0.05);
-  --card-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
-  --halo-glow-color: rgba(23, 107, 135, 0.08);
+  --page-bg: #f7fafc;
+  --section-tint: rgba(23, 107, 135, 0.045);
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --card-border: rgba(49, 79, 104, 0.12);
+  --card-shadow: 0 18px 45px rgba(23, 32, 51, 0.08);
+  --halo-glow-color: rgba(23, 107, 135, 0.12);
 }
 
 [data-theme="dark"] {
@@ -40,6 +42,8 @@
   --primary-color: #00ADB5;
   --primary-hover: #008f96;
   --accent-color: #6366F1;
+  --page-bg: #0B0F19;
+  --section-tint: rgba(255, 255, 255, 0.02);
   --card-bg: rgba(16, 24, 48, 0.65);
   --card-border: rgba(255, 255, 255, 0.08);
   --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
@@ -52,11 +56,18 @@
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
-  background: #F5F5F5;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(23, 107, 135, 0.08), transparent 28rem),
+    radial-gradient(circle at 82% 18%, rgba(69, 169, 135, 0.08), transparent 30rem),
+    var(--page-bg);
   margin: 0;
   font-family: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 [data-theme="dark"] body {
@@ -156,8 +167,8 @@ body {
   z-index: 100;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  background: rgba(245, 245, 245, 0.75);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(247, 250, 252, 0.86);
+  border-bottom: 1px solid rgba(49, 79, 104, 0.1);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -169,7 +180,7 @@ body {
 .navbar-scrolled {
   padding-top: 10px;
   padding-bottom: 10px;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 12px 32px -18px rgba(23, 32, 51, 0.3);
 }
 
 [data-theme="dark"] .navbar-scrolled {
@@ -185,8 +196,8 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.12;
-  mix-blend-mode: overlay;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
 }
 
 [data-theme="dark"] .hero-video-bg {
@@ -197,7 +208,9 @@ body {
 .hero-glow-layer {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 30%, rgba(23, 107, 135, 0.07) 0%, transparent 60%);
+  background:
+    linear-gradient(180deg, rgba(247, 250, 252, 0.78) 0%, rgba(247, 250, 252, 0.5) 50%, rgba(247, 250, 252, 1) 100%),
+    radial-gradient(circle at 50% 30%, rgba(23, 107, 135, 0.12) 0%, transparent 60%);
   pointer-events: none;
   z-index: -1;
 }
@@ -282,7 +295,6 @@ aside,
   gap: 24px;
 }
 
-section,
 .verdict-panel,
 .verdict-empty {
   background: var(--card-bg);
@@ -833,5 +845,151 @@ article p {
   .confidence {
     width: 100%;
     min-width: 0;
+  }
+}
+
+/* -------------------------------------------------------------
+   LEXA ENHANCED v2.0 DESIGN SYSTEM ADDITIONS
+   ------------------------------------------------------------- */
+
+/* Technology Cards */
+.tech-card {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+}
+
+.tech-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-color);
+  box-shadow: 0 12px 24px -10px rgba(23, 107, 135, 0.15);
+}
+
+[data-theme="dark"] .tech-card:hover {
+  box-shadow: 0 12px 24px -10px rgba(0, 173, 181, 0.3);
+}
+
+/* Interactive Architecture Visualizer */
+.arch-flow-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 1.5rem;
+}
+
+.arch-node {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 14px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  min-width: 250px;
+}
+
+.arch-node:hover, .arch-node.active {
+  transform: scale(1.03);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 20px -6px rgba(23, 107, 135, 0.2);
+}
+
+[data-theme="dark"] .arch-node:hover, [data-theme="dark"] .arch-node.active {
+  box-shadow: 0 8px 20px -6px rgba(0, 173, 181, 0.35);
+}
+
+.arch-connector-svg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.arch-flow-line {
+  fill: none;
+  stroke: rgba(0, 0, 0, 0.08);
+  stroke-width: 2.5;
+}
+
+[data-theme="dark"] .arch-flow-line {
+  stroke: rgba(255, 255, 255, 0.06);
+}
+
+.arch-flow-pulse {
+  fill: none;
+  stroke: var(--primary-color);
+  stroke-width: 2.5;
+  stroke-dasharray: 6 12;
+  animation: stroke-march 1.5s linear infinite;
+}
+
+@keyframes stroke-march {
+  to {
+    stroke-dashoffset: -18;
+  }
+}
+
+/* Legal Analytics Gauges */
+.gauge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.gauge-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.6s ease-out;
+}
+
+/* Floating Fallback Banner */
+.fallback-banner {
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  color: #d97706;
+}
+
+[data-theme="dark"] .fallback-banner {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.05) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+/* Animations */
+.glow-pulse {
+  animation: glow-pulse-animation 2s infinite alternate;
+}
+
+@keyframes glow-pulse-animation {
+  0% {
+    box-shadow: 0 0 4px var(--primary-color);
+  }
+  100% {
+    box-shadow: 0 0 16px var(--primary-color);
   }
 }
