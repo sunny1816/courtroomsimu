@@ -83,6 +83,75 @@ function UseCaseCard({ title, desc, icon: Icon, videoUrl }: { title: string; des
   )
 }
 
+function InteractiveArchitecture() {
+  const steps = [
+    { title: 'Case Document', desc: 'Input trial briefs, testimonies, or court transcripts.' },
+    { title: 'Evidence Analyst', desc: 'Extracts core facts, timelines, dates, and named entities.' },
+    { title: 'Legal Researcher', desc: 'Queries statutes matching IPC/BNS sections.' },
+    { title: 'Prosecutor Counsel', desc: 'Assembles charges and structures arguments for conviction.' },
+    { title: 'Defense Counsel', desc: 'Formulates reasonable doubts and points out gaps.' },
+    { title: 'Contradiction Detector', desc: 'Audits testimonies for factual contradictions.' },
+    { title: 'Judge Agent', desc: 'Performs judicial synthesis of evidence and law.' },
+    { title: 'Jury Panel', desc: 'Runs multi-member voting on verdict confidence.' },
+    { title: 'Appeal Court Review', desc: 'Audits procedural validity of the verdict.' },
+    { title: 'Final Verdict', desc: 'Renders the explainable final judgment order.' }
+  ]
+
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
+  return (
+    <div className="w-full">
+      <div className="flex flex-col gap-4 mb-16 text-center items-center">
+        <span className="text-xs font-bold uppercase tracking-wider text-[#176B87] dark:text-[#2DD4BF] bg-[#176B87]/5 dark:bg-[#2DD4BF]/5 px-3.5 py-1.5 rounded-full">
+          Workflow Pipeline
+        </span>
+        <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-black dark:text-white font-sans">
+          Interactive Agent Pipeline
+        </h2>
+        <p className="text-gray-500 dark:text-gray-400 max-w-xl leading-relaxed text-sm">
+          Follow the flow of legal evidence as it moves through specialized agent roles. Hover over any step to highlight its core function.
+        </p>
+      </div>
+
+      <div className="relative flex flex-col items-center gap-12 py-10">
+        <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1 h-full z-0 pointer-events-none">
+          <svg className="w-1.5 h-full" overflow="visible">
+            <line x1="3" y1="0" x2="3" y2="100%" className="arch-flow-line" />
+            <line x1="3" y1="0" x2="3" y2="100%" className="arch-flow-pulse" />
+          </svg>
+        </div>
+
+        {steps.map((step, idx) => {
+          const isHovered = hoveredIndex === idx
+          return (
+            <div 
+              key={step.title}
+              onMouseEnter={() => setHoveredIndex(idx)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className={`arch-node flex items-center justify-between gap-4 p-5 rounded-xl border z-10 w-full max-w-md cursor-pointer transition-all duration-300 ${isHovered ? 'active border-[#176B87] dark:border-[#2DD4BF] bg-white dark:bg-[#0B0F19] scale-105 shadow-lg shadow-[#176B87]/5 dark:shadow-[#2DD4BF]/5' : 'bg-white/80 dark:bg-[#101830]/80'}`}
+            >
+              <div className="flex items-center gap-4 text-left">
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${isHovered ? 'bg-[#176B87] dark:bg-[#2DD4BF] text-white dark:text-black' : 'bg-gray-100 dark:bg-white/5 text-gray-500'}`}>
+                  {idx + 1}
+                </div>
+                <div className="flex flex-col">
+                  <span className={`font-bold text-sm ${isHovered ? 'text-[#176B87] dark:text-[#2DD4BF]' : 'text-black dark:text-white'}`}>
+                    {step.title}
+                  </span>
+                  <span className="text-xs text-gray-400 dark:text-gray-500">
+                    {step.desc}
+                  </span>
+                </div>
+              </div>
+              <div className={`w-2 h-2 rounded-full shrink-0 ${isHovered ? 'bg-[#176B87] dark:bg-[#2DD4BF] animate-ping' : 'bg-transparent'}`} />
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
 export function Home() {
   const [caseId, setCaseId] = useState('')
   const [logs, setLogs] = useState<AgentLog[]>([])
@@ -96,6 +165,7 @@ export function Home() {
   const simulatorRef = useRef<HTMLDivElement>(null)
   const featuresRef = useRef<HTMLDivElement>(null)
   const useCasesRef = useRef<HTMLDivElement>(null)
+  const architectureRef = useRef<HTMLDivElement>(null)
 
   async function refresh(id = caseId) {
     const caseList = await getCases()
@@ -189,21 +259,21 @@ export function Home() {
     useCasesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
-  // Brand marquee mock lists
-  const brandLogos = [
-    { name: 'Stripe', path: 'M4 8v16h6V14h4v10h6V14c0-4-2.5-6-6-6H4z' },
-    { name: 'Plaid', path: 'M4 4h24v6H4V4zm0 9h24v6H4v-6zm0 9h24v6H4v-6z' },
-    { name: 'Visa', path: 'M4 8h5l3 11 3-11h5l-6 16H9L4 8z' },
-    { name: 'Mastercard', path: 'M11 6a10 10 0 1 0 0 20 10 10 0 1 0 0-20z M21 6a10 10 0 1 0 0 20 10 10 0 1 0 0-20z' },
-    { name: 'Coinbase', path: 'M16 4a12 12 0 1 0 12 12A12 12 0 0 0 16 4zm0 18a6 6 0 1 1 6-6 6 6 0 0 1-6 6z' },
-    { name: 'Gemini', path: 'M6 10h20v2H6v-2zm0 10h20v2H6v-2z' },
-    { name: 'Brex', path: 'M4 4h14a6 6 0 0 1 6 6v12h-6v-6H10v6H4V4zm6 6v2h8v-2h-8z' },
-    { name: 'Revolut', path: 'M6 4h6l6 14v4h-6l-6-14V4zm14 0h6v12h-6V4z' }
-  ]
+  const scrollToArchitecture = () => {
+    architectureRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 
-  const backerLogos = [
-    'Sequoia Capital', 'Y Combinator', 'Andreessen Horowitz', 'Founders Fund', 
-    'Tiger Global', 'Accel Partners', 'Benchmark Capital', 'General Catalyst'
+  const technologies = [
+    { name: 'NVIDIA NIM', desc: 'Optimized inference microservices.' },
+    { name: 'Llama', desc: 'State-of-the-art open large language models.' },
+    { name: 'LangGraph', desc: 'Stateful multi-agent orchestration.' },
+    { name: 'LangChain', desc: 'LLM application and tool framework.' },
+    { name: 'FastAPI', desc: 'High-performance Python API framework.' },
+    { name: 'ChromaDB', desc: 'AI-native open vector database.' },
+    { name: 'React', desc: 'Modern user interface components.' },
+    { name: 'Next.js', desc: 'Production-grade React framework.' },
+    { name: 'TailwindCSS', desc: 'Utility-first styling system.' },
+    { name: 'Vercel', desc: 'Serverless deployment infrastructure.' }
   ]
 
   return (
@@ -223,15 +293,20 @@ export function Home() {
 
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-600 dark:text-gray-300">
             <button onClick={scrollToFeatures} className="hover:text-black dark:hover:text-white transition-colors cursor-pointer">Features</button>
+            <button onClick={scrollToArchitecture} className="hover:text-black dark:hover:text-white transition-colors cursor-pointer">Architecture</button>
             <button onClick={scrollToUseCases} className="hover:text-black dark:hover:text-white transition-colors cursor-pointer">Use Cases</button>
             <button onClick={scrollToSimulator} className="hover:text-black dark:hover:text-white transition-colors cursor-pointer">Simulator</button>
+            <a href="/training" className="hover:text-[#176B87] dark:hover:text-[#2DD4BF] transition-colors cursor-pointer flex items-center gap-1.5">
+              <Cpu className="w-3.5 h-3.5" />
+              Model Training
+            </a>
           </div>
 
           <div className="flex items-center gap-4">
             <button 
               className="w-10 h-10 rounded-full border border-gray-200 dark:border-white/5 flex items-center justify-center text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer" 
               type="button" 
-              aria-label="Toggle theme" 
+              aria-label={darkMode ? "Light" : "Dark"} 
               onClick={() => setDarkMode(!darkMode)}
             >
               {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -262,18 +337,18 @@ export function Home() {
         <div className="max-w-4xl mx-auto flex flex-col items-center gap-6 relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full premium-glass text-xs font-semibold tracking-tight text-[#176B87] dark:text-[#2DD4BF]">
             <Scale className="w-3.5 h-3.5" />
-            <span>Autonomous Indian Courtroom intelligence</span>
+            <span>Autonomous Indian Courtroom Intelligence</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.08] font-sans text-black dark:text-white">
-            Simulate Courtroom Trials <br />
+            LEXA <br />
             <span className="bg-gradient-to-r from-[#176B87] via-[#2D9CA9] to-[#2DD4BF] bg-clip-text text-transparent">
-              Powered by Multi-Agents
+              Autonomous Multi-Agent Courtroom Intelligence System
             </span>
           </h1>
 
           <p className="text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-2xl leading-relaxed font-sans">
-            Streamline Indian legal case analysis. Deploy a coordinated network of AI legal agents—from evidence auditors to prosecution, defense, and jury panels—to deliver deep trace insights automatically.
+            Analyze legal evidence using specialized AI agents that simulate prosecution, defense, judicial reasoning, jury deliberation, and appellate review.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full sm:w-auto">
@@ -281,49 +356,40 @@ export function Home() {
               onClick={scrollToSimulator}
               className="w-full sm:w-auto bg-[#176B87] dark:bg-[#2DD4BF] hover:bg-[#115066] dark:hover:bg-[#22bca9] text-white px-8 py-3.5 rounded-full font-bold text-sm tracking-tight transition-all duration-200 shadow-lg shadow-[#176B87]/20 dark:shadow-[#2DD4BF]/20 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer"
             >
-              <span>Open Simulator</span>
+              <span>Launch Simulator</span>
               <Play className="w-4 h-4 fill-white" />
             </button>
             <button 
-              onClick={scrollToFeatures}
+              onClick={scrollToArchitecture}
               className="w-full sm:w-auto premium-glass text-black dark:text-white px-8 py-3.5 rounded-full font-bold text-sm tracking-tight hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
             >
-              <span>How It Works</span>
+              <span>View Architecture</span>
               <ArrowRight className="w-4 h-4 text-gray-400" />
             </button>
           </div>
         </div>
       </header>
 
-      {/* Infinite Scrolling Marquees Section */}
-      <section className="py-12 bg-black/2 dark:bg-white/2 border-y border-gray-200/50 dark:border-white/5 relative z-10 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 mb-6 text-center">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
-            INTEGRATED PLATFORMS & BACKED BY LEADING FIRMS
-          </span>
-        </div>
-
-        {/* Marquee 1: Brand Integrations */}
-        <div className="relative w-full flex items-center overflow-hidden py-3">
-          <div className="marquee-track flex gap-12 text-gray-400 dark:text-gray-500 font-semibold items-center text-sm">
-            {[...brandLogos, ...brandLogos].map((logo, index) => (
-              <div key={index} className="flex items-center gap-2 select-none">
-                <svg className="w-5 h-5 fill-current opacity-60" viewBox="0 0 32 32">
-                  <path d={logo.path} />
-                </svg>
-                <span className="font-sans text-sm tracking-wider font-semibold opacity-70">{logo.name}</span>
-              </div>
-            ))}
+      {/* Core AI and Legal Technologies Section */}
+      <section className="py-20 bg-black/2 dark:bg-white/2 border-y border-gray-200/50 dark:border-white/5 relative z-10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col gap-3 mb-12 text-center items-center">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#176B87] dark:text-[#2DD4BF] bg-[#176B87]/5 dark:bg-[#2DD4BF]/5 px-3 py-1.5 rounded-full">
+              Core Stack
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-black dark:text-white font-sans">
+              Core AI & Legal Technologies
+            </h2>
+            <p className="text-gray-500 dark:text-gray-400 max-w-lg leading-relaxed text-sm">
+              LEXA is engineered using industry-standard machine learning orchestration frameworks and legal databases.
+            </p>
           </div>
-        </div>
-
-        {/* Marquee 2: Backers */}
-        <div className="relative w-full flex items-center overflow-hidden py-3 mt-2">
-          <div className="backers-track flex gap-16 text-gray-400 dark:text-gray-500 font-bold items-center text-xs">
-            {[...backerLogos, ...backerLogos].map((backer, index) => (
-              <span key={index} className="font-sans tracking-widest uppercase opacity-65 select-none whitespace-nowrap">
-                {backer}
-              </span>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {technologies.map((tech) => (
+              <div key={tech.name} className="tech-card p-5 rounded-xl border flex flex-col gap-2">
+                <span className="font-extrabold text-sm text-black dark:text-white">{tech.name}</span>
+                <span className="text-[11px] text-gray-400 dark:text-gray-500 leading-normal font-sans">{tech.desc}</span>
+              </div>
             ))}
           </div>
         </div>
@@ -410,6 +476,11 @@ export function Home() {
         </div>
       </section>
 
+      {/* Interactive Architecture Section */}
+      <section ref={architectureRef} className="py-24 px-6 md:px-12 relative z-10 bg-black/2 dark:bg-white/2 border-t border-gray-200/50 dark:border-white/5">
+        <InteractiveArchitecture />
+      </section>
+
       {/* Simulator Workspace Section */}
       <section 
         ref={simulatorRef}
@@ -436,6 +507,19 @@ export function Home() {
           </aside>
           
           <div className="main-stack">
+            {logs.some(
+              (item) =>
+                item.agent_name === 'System' &&
+                typeof item.output === 'object' &&
+                item.output !== null &&
+                'warning' in item.output &&
+                String((item.output as any).warning).includes('NIM unavailable')
+            ) && (
+              <div className="fallback-banner flex items-start gap-2.5 p-4 rounded-xl text-xs font-semibold leading-relaxed">
+                <ShieldAlert className="w-4 h-4 shrink-0 mt-0.5" />
+                <span>NIM unavailable. Using fallback model.</span>
+              </div>
+            )}
             <AgentPanel logs={logs} />
             <VerdictCard verdict={verdict} status={caseStatus} error={analysisError} />
           </div>

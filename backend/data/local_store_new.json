@@ -1,0 +1,550 @@
+{
+  "cases": [
+    {
+      "id": "9ff14301-63a9-4455-a076-04a821665218",
+      "title": "Sample Case: State v. Rohan",
+      "file_path": null,
+      "raw_text": "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod. The victim later died in hospital. The defense says the witness was standing far away and could not clearly identify the attacker. Police recovered a rod, but the forensic report is inconclusive.",
+      "status": "completed",
+      "created_at": "2026-06-10T17:14:36.099076+00:00"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": "66c4bcaf-6e4c-41e4-aa6d-2b702ad3097e",
+      "case_id": "9ff14301-63a9-4455-a076-04a821665218",
+      "verdict": "Guilty",
+      "confidence": 0.63,
+      "evidence_summary": "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod. The victim later died in hospital.",
+      "prosecution_args": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod.",
+      "defense_args": "The defence presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts.",
+      "contradictions": [
+        {
+          "statement_a": "Prosecution relies on the complaint",
+          "statement_b": "Defence disputes proof beyond doubt",
+          "conflict": "Evidentiary sufficiency"
+        }
+      ],
+      "retrieved_laws": [],
+      "judge_reasoning": "The court weighs the witness account, recovery material, medical outcome, and defence doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support.",
+      "jury_vote": {
+        "verdict": "Guilty",
+        "confidence": 0.63,
+        "votes": {
+          "guilty": 3,
+          "not_guilty": 1,
+          "abstain": 1
+        }
+      },
+      "appeal_decision": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding.",
+      "agent_trace": [
+        {
+          "agent": "Evidence",
+          "output": {
+            "facts": [
+              "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+              "A witness says Rohan struck the victim with a metal rod.",
+              "The victim later died in hospital.",
+              "The defense says the witness was standing far away and could not clearly identify the attacker."
+            ],
+            "people": [
+              "Rohan"
+            ],
+            "dates": [
+              "8:30 PM"
+            ],
+            "events": [
+              "Incident described in uploaded case",
+              "Evidence and defences separated for review"
+            ]
+          }
+        },
+        {
+          "agent": "LegalResearch",
+          "output": []
+        },
+        {
+          "agent": "Prosecutor",
+          "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+        },
+        {
+          "agent": "Defense",
+          "output": "The defence presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+        },
+        {
+          "agent": "ContradictionDetector",
+          "output": [
+            {
+              "statement_a": "Prosecution relies on the complaint",
+              "statement_b": "Defence disputes proof beyond doubt",
+              "conflict": "Evidentiary sufficiency"
+            }
+          ]
+        },
+        {
+          "agent": "Judge",
+          "output": "The court weighs the witness account, recovery material, medical outcome, and defence doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+        },
+        {
+          "agent": "Jury",
+          "output": {
+            "verdict": "Guilty",
+            "confidence": 0.63,
+            "votes": {
+              "guilty": 3,
+              "not_guilty": 1,
+              "abstain": 1
+            }
+          }
+        },
+        {
+          "agent": "AppealCourt",
+          "output": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding."
+        }
+      ],
+      "created_at": "2026-06-10T17:14:36.407654+00:00"
+    }
+  ],
+  "agent_logs": [
+    {
+      "id": "ea9985ad-9046-457d-bac3-26e608551afa",
+      "case_id": "9ff14301-63a9-4455-a076-04a821665218",
+      "agent_name": "Evidence",
+      "output": {
+        "evidence": {
+          "facts": [
+            "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+            "A witness says Rohan struck the victim with a metal rod.",
+            "The victim later died in hospital.",
+            "The defense says the witness was standing far away and could not clearly identify the attacker."
+          ],
+          "people": [
+            "Rohan"
+          ],
+          "dates": [
+            "8:30 PM"
+          ],
+          "events": [
+            "Incident described in uploaded case",
+            "Evidence and defences separated for review"
+          ]
+        },
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defences separated for review"
+              ]
+            }
+          }
+        ]
+      },
+      "created_at": "2026-06-10T17:14:36.150288+00:00"
+    },
+    {
+      "id": "eed89273-bf1c-47d1-bbf0-0afc622ebdfa",
+      "case_id": "9ff14301-63a9-4455-a076-04a821665218",
+      "agent_name": "LegalResearch",
+      "output": {
+        "retrieved_laws": [],
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defences separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": []
+          }
+        ]
+      },
+      "created_at": "2026-06-10T17:14:36.251205+00:00"
+    },
+    {
+      "id": "1e65fabd-79b1-4e8d-9d49-93e287d75a58",
+      "case_id": "9ff14301-63a9-4455-a076-04a821665218",
+      "agent_name": "Prosecutor",
+      "output": {
+        "prosecution": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defences separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": []
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          }
+        ]
+      },
+      "created_at": "2026-06-10T17:14:36.270301+00:00"
+    },
+    {
+      "id": "be650477-d233-4467-9ed8-73f25a9f6aed",
+      "case_id": "9ff14301-63a9-4455-a076-04a821665218",
+      "agent_name": "Defense",
+      "output": {
+        "defense": "The defence presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defences separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": []
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defence presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          }
+        ]
+      },
+      "created_at": "2026-06-10T17:14:36.293727+00:00"
+    },
+    {
+      "id": "1fc6be94-345d-496b-8be3-d728e553a291",
+      "case_id": "9ff14301-63a9-4455-a076-04a821665218",
+      "agent_name": "ContradictionDetector",
+      "output": {
+        "contradictions": [
+          {
+            "statement_a": "Prosecution relies on the complaint",
+            "statement_b": "Defence disputes proof beyond doubt",
+            "conflict": "Evidentiary sufficiency"
+          }
+        ],
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defences separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": []
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defence presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defence disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          }
+        ]
+      },
+      "created_at": "2026-06-10T17:14:36.315004+00:00"
+    },
+    {
+      "id": "bab22468-cb93-4d2c-b296-264c6e624515",
+      "case_id": "9ff14301-63a9-4455-a076-04a821665218",
+      "agent_name": "Judge",
+      "output": {
+        "judge_reasoning": "The court weighs the witness account, recovery material, medical outcome, and defence doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defences separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": []
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defence presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defence disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defence doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          }
+        ]
+      },
+      "created_at": "2026-06-10T17:14:36.337529+00:00"
+    },
+    {
+      "id": "99b90e1c-30fc-4d04-be5b-a1916e993a9e",
+      "case_id": "9ff14301-63a9-4455-a076-04a821665218",
+      "agent_name": "Jury",
+      "output": {
+        "jury_vote": {
+          "verdict": "Guilty",
+          "confidence": 0.63,
+          "votes": {
+            "guilty": 3,
+            "not_guilty": 1,
+            "abstain": 1
+          }
+        },
+        "final_verdict": "Guilty",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defences separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": []
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defence presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defence disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defence doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          },
+          {
+            "agent": "Jury",
+            "output": {
+              "verdict": "Guilty",
+              "confidence": 0.63,
+              "votes": {
+                "guilty": 3,
+                "not_guilty": 1,
+                "abstain": 1
+              }
+            }
+          }
+        ]
+      },
+      "created_at": "2026-06-10T17:14:36.365047+00:00"
+    },
+    {
+      "id": "62509081-e496-492e-a2bf-1841b27aca59",
+      "case_id": "9ff14301-63a9-4455-a076-04a821665218",
+      "agent_name": "AppealCourt",
+      "output": {
+        "appeal_decision": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding.",
+        "agent_trace": [
+          {
+            "agent": "Evidence",
+            "output": {
+              "facts": [
+                "The complaint states that Rohan argued with the victim outside a shop at 8:30 PM.",
+                "A witness says Rohan struck the victim with a metal rod.",
+                "The victim later died in hospital.",
+                "The defense says the witness was standing far away and could not clearly identify the attacker."
+              ],
+              "people": [
+                "Rohan"
+              ],
+              "dates": [
+                "8:30 PM"
+              ],
+              "events": [
+                "Incident described in uploaded case",
+                "Evidence and defences separated for review"
+              ]
+            }
+          },
+          {
+            "agent": "LegalResearch",
+            "output": []
+          },
+          {
+            "agent": "Prosecutor",
+            "output": "The prosecution says the complaint, witness account, recovery details, and surrounding conduct form a connected chain. The strongest points are that The complaint states that Rohan argued with the victim outside a shop at 8:30 PM. A witness says Rohan struck the victim with a metal rod."
+          },
+          {
+            "agent": "Defense",
+            "output": "The defence presses reasonable doubt on identification, intent, witness reliability, forensic certainty, and whether the cited law is fully matched to the facts."
+          },
+          {
+            "agent": "ContradictionDetector",
+            "output": [
+              {
+                "statement_a": "Prosecution relies on the complaint",
+                "statement_b": "Defence disputes proof beyond doubt",
+                "conflict": "Evidentiary sufficiency"
+              }
+            ]
+          },
+          {
+            "agent": "Judge",
+            "output": "The court weighs the witness account, recovery material, medical outcome, and defence doubts against the cited law. The prosecution has a coherent chain, but confidence depends on identification and forensic support."
+          },
+          {
+            "agent": "Jury",
+            "output": {
+              "verdict": "Guilty",
+              "confidence": 0.63,
+              "votes": {
+                "guilty": 3,
+                "not_guilty": 1,
+                "abstain": 1
+              }
+            }
+          },
+          {
+            "agent": "AppealCourt",
+            "output": "Appeal review finds no clear procedural error, but recommends fuller evidence collection before a final adverse finding."
+          }
+        ]
+      },
+      "created_at": "2026-06-10T17:14:36.386088+00:00"
+    }
+  ]
+}

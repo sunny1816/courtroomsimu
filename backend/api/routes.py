@@ -21,6 +21,11 @@ def analyze_case(case_id: str) -> None:
     if not case:
         return
     db.update_case_status(case_id, "processing")
+    
+    from services.nim_client import case_id_var, warning_logged_var
+    token_case = case_id_var.set(case_id)
+    token_warn = warning_logged_var.set(False)
+
     try:
         state = run_workflow(
             {"case_id": case_id, "case_text": case["raw_text"]},
@@ -31,13 +36,16 @@ def analyze_case(case_id: str) -> None:
     except Exception as exc:
         db.log_agent(case_id, "System", {"error": str(exc)})
         db.update_case_status(case_id, "failed")
+    finally:
+        case_id_var.reset(token_case)
+        warning_logged_var.reset(token_warn)
 
 
 @router.post("/upload")
 async def upload_case(background_tasks: BackgroundTasks, file: UploadFile = File(...)):
     suffix = Path(file.filename or "case.txt").suffix.lower()
-    if suffix not in {".pdf", ".txt"}:
-        raise HTTPException(status_code=400, detail="Upload a PDF or TXT case document")
+    if suffix not in {".pdf", ".txt", ".docx", ".doc"}:
+        raise HTTPException(status_code=400, detail="Upload a PDF, DOCX, or TXT case document")
 
     with NamedTemporaryFile(delete=False, suffix=suffix) as temp:
         temp.write(await file.read())
