@@ -18,3 +18,6 @@ data/uploads/
 models/faiss_index/*.faiss
 models/faiss_index/*.pkl
 manual-check.png
+lexa_gpu/
+**/checkpoint-*/
+*.safetensors

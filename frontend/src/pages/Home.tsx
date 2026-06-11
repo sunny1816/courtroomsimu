@@ -296,6 +296,10 @@ export function Home() {
             <button onClick={scrollToArchitecture} className="hover:text-black dark:hover:text-white transition-colors cursor-pointer">Architecture</button>
             <button onClick={scrollToUseCases} className="hover:text-black dark:hover:text-white transition-colors cursor-pointer">Use Cases</button>
             <button onClick={scrollToSimulator} className="hover:text-black dark:hover:text-white transition-colors cursor-pointer">Simulator</button>
+            <a href="/training" className="hover:text-[#176B87] dark:hover:text-[#2DD4BF] transition-colors cursor-pointer flex items-center gap-1.5">
+              <Cpu className="w-3.5 h-3.5" />
+              Model Training
+            </a>
           </div>
 
           <div className="flex items-center gap-4">

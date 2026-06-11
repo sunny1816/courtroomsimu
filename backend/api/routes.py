@@ -44,8 +44,8 @@ def analyze_case(case_id: str) -> None:
 @router.post("/upload")
 async def upload_case(background_tasks: BackgroundTasks, file: UploadFile = File(...)):
     suffix = Path(file.filename or "case.txt").suffix.lower()
-    if suffix not in {".pdf", ".txt"}:
-        raise HTTPException(status_code=400, detail="Upload a PDF or TXT case document")
+    if suffix not in {".pdf", ".txt", ".docx", ".doc"}:
+        raise HTTPException(status_code=400, detail="Upload a PDF, DOCX, or TXT case document")
 
     with NamedTemporaryFile(delete=False, suffix=suffix) as temp:
         temp.write(await file.read())

@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "error": "'charmap' codec can't encode character '\\u2192' in position 596: character maps to <undefined>",
+  "log": [
+    "ERROR: 'charmap' codec can't encode character '\\u2192' in position 596: character maps to <undefined>"
+  ]
+}
