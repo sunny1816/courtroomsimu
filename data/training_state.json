@@ -1,7 +1,7 @@
 {
-  "status": "failed",
+  "status": "training",
   "base_model": "Qwen/Qwen2.5-3B-Instruct",
-  "started_at": "2026-06-11T04:23:37.172934",
+  "started_at": "2026-06-11T17:17:57.533049",
   "epoch": 0,
   "num_epochs": 3,
   "step": 0,
@@ -12,9 +12,7 @@
     "Loading tokenizer from Qwen/Qwen2.5-3B-Instruct…",
     "Loading base model (4-bit QLoRA)…",
     "Trainable parameters: 7,372,800",
-    "Dataset: 3057 training examples",
-    "Training started…",
-    "ERROR: schema_.has_value() INTERNAL ASSERT FAILED at \"C:\\\\actions-runner\\\\_work\\\\pytorch\\\\pytorch\\\\pytorch\\\\aten\\\\src\\\\ATen/core/dispatch/OperatorEntry.h\":84, please report a bug to PyTorch. Tried to access the schema for  which doesn't have a schema registered yet"
-  ],
-  "error": "schema_.has_value() INTERNAL ASSERT FAILED at \"C:\\\\actions-runner\\\\_work\\\\pytorch\\\\pytorch\\\\pytorch\\\\aten\\\\src\\\\ATen/core/dispatch/OperatorEntry.h\":84, please report a bug to PyTorch. Tried to access the schema for  which doesn't have a schema registered yet"
+    "Dataset: 3056 training examples",
+    "Training started…"
+  ]
 }

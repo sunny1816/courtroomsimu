@@ -283,10 +283,11 @@ main {
 
 .workspace {
   display: grid;
-  gap: 28px;
-  grid-template-columns: minmax(300px, 380px) 1fr;
+  gap: 32px;
+  grid-template-columns: minmax(450px, 520px) minmax(0, 1fr);
   margin: 0 auto;
-  max-width: 1320px;
+  max-width: 1400px;
+  align-items: start;
 }
 
 aside,

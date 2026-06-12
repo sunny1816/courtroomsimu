@@ -5,6 +5,24 @@ from graph.state import LEXAState
 from services.nim_client import call_agent
 from services.json_utils import parse_json
 
+INNOCENCE_TERMS = {
+    "alibi",
+    "flight records",
+    "hotel records",
+    "attendance records",
+    "cctv elsewhere",
+    "different location",
+    "not present",
+    "could not have",
+    "proved innocence",
+    "innocent",
+    "mistaken identity",
+    "wrong person",
+    "not involved",
+    "not at the scene",
+    "another suspect",
+    "elsewhere",
+}
 
 SUPPORT_TERMS = {
     "witness says",
@@ -94,38 +112,143 @@ def _normalize_vote(state: LEXAState, vote: dict[str, Any]) -> dict[str, Any]:
         {
             "case": state.get("case_text", ""),
             "evidence": state.get("evidence", {}),
+            "judge": state.get("judge_reasoning", ""),
         }
     ).lower()
+
     support = _count_positive(combined, SUPPORT_TERMS)
     doubt = _count(combined, DOUBT_TERMS)
     corroboration = _count_positive(combined, CORROBORATION_TERMS)
-    severe = any(term in combined for term in ("death", "died", "killed", "murder", "assault", "bodily injury"))
+
+    INNOCENCE_TERMS = {
+        "alibi",
+        "flight records",
+        "hotel records",
+        "attendance records",
+        "cctv elsewhere",
+        "different location",
+        "not present",
+        "could not have",
+        "proved innocence",
+        "innocent",
+        "mistaken identity",
+        "wrong person",
+        "not involved",
+        "not at the scene",
+        "another suspect",
+        "elsewhere",
+    }
+
+    innocence = _count_positive(combined, INNOCENCE_TERMS)
+
+    severe = any(
+        term in combined
+        for term in (
+            "death",
+            "died",
+            "killed",
+            "murder",
+            "assault",
+            "bodily injury",
+        )
+    )
+
     short_record = len(state.get("case_text", "").split()) < 15
 
-    verdict = str(vote.get("verdict") or "").strip()
-    if short_record or support <= 1:
+    judge_reasoning = state.get("judge_reasoning", "").lower()
+
+    # --------------------------------------------------
+    # PRIMARY VERDICT LOGIC
+    # --------------------------------------------------
+
+    if innocence >= 2:
+        verdict = "Not Guilty"
+
+    elif "beyond reasonable doubt" in judge_reasoning:
+        verdict = "Guilty"
+
+    elif "reasonable doubt" in judge_reasoning:
+        verdict = "Not Guilty"
+
+    elif "insufficient evidence" in judge_reasoning:
         verdict = "Insufficient Evidence"
+
+    elif short_record:
+        verdict = "Insufficient Evidence"
+
     elif support >= doubt + 2 and corroboration >= 2:
         verdict = "Guilty"
+
     elif severe and support > doubt and corroboration >= 2:
         verdict = "Guilty"
-    elif doubt >= support and corroboration < 3:
+
+    elif doubt >= support:
         verdict = "Not Guilty"
-    elif verdict not in {"Guilty", "Not Guilty", "Insufficient Evidence"} or verdict == "Insufficient Evidence":
-        verdict = "Not Guilty" if doubt > support else "Insufficient Evidence"
 
-    gap = abs(support - doubt)
-    if verdict == "Guilty":
-        confidence = min(0.9, max(0.58, 0.58 + gap * 0.04 + corroboration * 0.025 - doubt * 0.01))
-        votes = {"guilty": 4 if confidence >= 0.68 else 3, "not_guilty": 1, "abstain": 0 if confidence >= 0.68 else 1}
-    elif verdict == "Not Guilty":
-        confidence = min(0.86, max(0.56, 0.56 + max(doubt - support, 0) * 0.05 + max(3 - corroboration, 0) * 0.03))
-        votes = {"guilty": 1, "not_guilty": 4 if confidence >= 0.66 else 3, "abstain": 0 if confidence >= 0.66 else 1}
     else:
-        confidence = min(0.66, max(0.5, 0.52 + gap * 0.025))
-        votes = {"guilty": 1 if support > doubt else 0, "not_guilty": 1 if doubt > support else 0, "abstain": 4}
+        verdict = "Insufficient Evidence"
 
-    return {"verdict": verdict, "confidence": round(confidence, 2), "votes": votes}
+    # --------------------------------------------------
+    # CONFIDENCE + JURY VOTES
+    # --------------------------------------------------
+
+    gap = abs((support + innocence) - doubt)
+
+    if verdict == "Guilty":
+        confidence = min(
+            0.95,
+            max(
+                0.65,
+                0.65
+                + gap * 0.04
+                + corroboration * 0.03
+                - doubt * 0.01,
+            ),
+        )
+
+        votes = {
+            "guilty": 5 if confidence >= 0.80 else 4,
+            "not_guilty": 0 if confidence >= 0.80 else 1,
+            "abstain": 0,
+        }
+
+    elif verdict == "Not Guilty":
+        confidence = min(
+            0.95,
+            max(
+                0.65,
+                0.65
+                + innocence * 0.05
+                + max(doubt - support, 0) * 0.03,
+            ),
+        )
+
+        votes = {
+            "guilty": 0,
+            "not_guilty": 5 if confidence >= 0.80 else 4,
+            "abstain": 0 if confidence >= 0.80 else 1,
+        }
+
+    else:
+        confidence = min(
+            0.70,
+            max(
+                0.50,
+                0.52 + gap * 0.02,
+            ),
+        )
+
+        votes = {
+            "guilty": 0,
+            "not_guilty": 0,
+            "abstain": 5,
+        }
+
+    return {
+        "verdict": verdict,
+        "confidence": round(confidence, 2),
+        "votes": votes,
+    }
 
 
 def jury_agent(state: LEXAState) -> dict:

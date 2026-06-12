@@ -243,11 +243,15 @@ export function AgentPanel({ logs }: Props) {
             }
           }
 
-          let reasoningSummary = ''
-          if (isDone && output) {
-            const rawText = text(output)
-            reasoningSummary = rawText.length > 130 ? rawText.slice(0, 130) + '...' : rawText
-          }
+        let reasoningSummary = ''
+
+if (isDone && output) {
+  const rawText = text(output)
+  reasoningSummary =
+    rawText.length > 50
+      ? rawText.slice(0, 50) + '...'
+      : rawText
+}
 
           return (
             <details
@@ -258,7 +262,7 @@ export function AgentPanel({ logs }: Props) {
               }`}
             >
               <summary className="flex items-center justify-between p-4 cursor-pointer select-none bg-black/2 dark:bg-white/2 hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 flex-1 min-w-0">
                   <span className={`dot ${status === 'Completed' ? 'done' : ''}`} style={{ display: 'none' }} />
                   {status === 'Completed' && (
                     <CheckCircle2 className="w-4.5 h-4.5 text-emerald-500 shrink-0" />
@@ -272,12 +276,12 @@ export function AgentPanel({ logs }: Props) {
                   {status === 'Waiting' && (
                     <Circle className="w-4.5 h-4.5 text-gray-300 dark:text-gray-600 shrink-0" />
                   )}
-                  <div className="flex flex-col text-left">
+                  <div className="flex flex-col text-left flex-1 min-w-0">
                     <span className="font-semibold text-sm tracking-tight text-black dark:text-white">
                       {agentDisplayNames[agent]}
                     </span>
                     {reasoningSummary && (
-                      <span className="text-[11px] text-gray-400 dark:text-gray-500 font-sans mt-0.5 line-clamp-1 max-w-[200px] sm:max-w-xs md:max-w-md">
+                      <span className="text-[11px] text-gray-400 dark:text-gray-500 font-sans mt-0.5 truncate">
                         {reasoningSummary}
                       </span>
                     )}
